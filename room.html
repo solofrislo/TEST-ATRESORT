@@ -29,6 +29,17 @@
             background-color: #f4f4f4;
         }
 
+        /* Top Nav */
+        .nav-top {
+            background-color: #16a085;
+            text-align: left;
+            color: white;
+            font-size: 16px;
+            display: flex;
+            justify-content: flex-end;
+            padding-left: 20px;
+            padding: 10px;
+        }
 
         .nav-container {
             display: flex;
@@ -85,19 +96,6 @@
             }
         }
 
-        /* Banner */
-        .banner {
-            width: 100%;
-            height: 60vh;
-            overflow: hidden;
-        }
-
-        .banner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.9;
-        }
 
         /* Section */
         .section-title {
@@ -108,8 +106,7 @@
             color: #2c3e50;
         }
 
-        .room-section,
-        .breakfast-section {
+        .room-section {
             padding: 60px 0;
             background-color: white;
             border-radius: 15px;
@@ -127,37 +124,7 @@
             transform: scale(1.05);
         }
 
-        .room-info,
-        .breakfast-info {
-            padding: 20px;
-            text-align: center;
-        }
 
-        /* ABOUT Section */
-        .about-section {
-            padding: 60px 0;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            margin-bottom: 40px;
-        }
-
-        .about-section .section-title {
-            font-size: 24px;
-            font-weight: 600;
-            color: #2c3e50;
-        }
-
-        .about-section ul {
-            padding-left: 15px;
-        }
-
-        .about-section ul li {
-            font-size: 16px;
-            color: #7f8c8d;
-            line-height: 1.8;
-        }
 
         .btn-resort {
             background: #16a085;
@@ -171,25 +138,6 @@
             background: #1abc9c;
             color: #ffffff;
             transform: scale(1.1);
-        }
-
-        /* Footer */
-        .footer {
-            background-color: #2c3e50;
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        .footer .social-icons a {
-            color: white;
-            font-size: 20px;
-            margin: 0 10px;
-            transition: 0.3s;
-        }
-
-        .footer .social-icons a:hover {
-            color: #1abc9c;
         }
 
         /* เมนูติดต่อเรา */
@@ -326,8 +274,6 @@
 </head>
 
 <body>
-
-
 
 
     <!-- ปุ่ม Scroll to Top -->
@@ -482,6 +428,78 @@
 
     <div class="container mt-5">
         <h2 class="section-title text-center mb-4 text-success">ห้องพักของเรา</h2>
+        <div class="container">
+            <div class="room-section mb-5">
+
+                <div class="card shadow-lg border-0 rounded-4 overflow-hidden mx-auto" style="max-width: 900px;">
+                    <img class="mainImage img-fluid w-100 transition-img fixed-size-img rounded-3" src="Room01.jpg"
+                        alt="ห้องเตียงคู่">
+                </div>
+
+                <!-- ภาพย่อยที่เลื่อนซ้าย-ขวาได้ -->
+                <div class="thumbnail-wrapper position-relative d-flex align-items-center mt-3">
+                    <button class="scroll-btn scroll-left translate-middle-y d-none d-md-flex">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <div class="thumbnail-container">
+                        <img src="House-01.jpg" class="img-thumbnail thumbnail-img" alt="เตียงคู่">
+                        <img src="Tv-01.jpg" class="img-thumbnail thumbnail-img" alt="ห้องน้ำ">
+                        <img src="Toilet-01.jpg" class="img-thumbnail thumbnail-img" alt="ห้องนั่งเล่น">
+                        <img src="Toilet-01.jpg" class="img-thumbnail thumbnail-img" alt="วิวห้อง">
+                        <img src="Toilet-01.jpg" class="img-thumbnail thumbnail-img" alt="ห้องอาหาร">
+                    </div>
+                    <button class="scroll-btn scroll-right translate-middle-y d-none d-md-flex">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+                <div class="room-info text-center mt-4 mx-auto" style="max-width: 900px;">
+                    <h4 class="fw-bold text-success">ห้องเตียงคู่ สำหรับพัก 2 คน</h4>
+                    <p class="text-muted">ภายในห้องพักประกอบด้วย</p>
+                    
+                    <!-- ใช้ Row แบ่ง 2 คอลัมน์เมื่อหน้าจอใหญ่ -->
+                    <div class="row row-cols-1 row-cols-md-2 g-3 align-items-start">
+                        <div class="col">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><i class="fa-solid fa-bed text-success me-2"></i> เตียงนอนสุดหรู 6 ฟุต พร้อมชุดเซตที่นอนสีขาวสุดหรูหรา</li>
+                                <li class="list-group-item"><i class="fa-solid fa-tv text-success me-2"></i> Smart TV ขนาด 32 นิ้ว (รับชมได้ทุกประเทศ ทั่วโลก)</li>
+                                <li class="list-group-item"><i class="fa-solid fa-snowflake text-success me-2"></i> เครื่องปรับอากาศ</li>
+                                <li class="list-group-item"><i class="fa-solid fa-utensils text-success me-2"></i> ชุดโต๊ะทานอาหาร (มีอาหารเช้าบริการ)</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><i class="fa-solid fa-temperature-high text-success me-2"></i> เครื่องทำน้ำอุ่น</li>
+                                <li class="list-group-item"><i class="fa-solid fa-hair-dryer text-success me-2"></i> ไดร์เป่าผม (แห้งเร็วพิเศษ)</li>
+                                <li class="list-group-item"><i class="fa-solid fa-couch text-success me-2"></i> โซฟานั่งรับแขกน่ารักๆ</li>
+                                <li class="list-group-item"><i class="fa-solid fa-bath text-success me-2"></i> ชุดสบู่อาบน้ำ แชมพู ครีมนวดผม หมวกใส่ผม รองเท้าในห้อง</li>
+                            </ul>
+                        </div>
+                    </div>
+                
+                    <h5 class="text-success mt-4 fw-bold">สิ่งอำนวยความสะดวก</h5>
+                
+                    <!-- ใช้ Row แบ่ง 2 คอลัมน์เมื่อหน้าจอใหญ่ -->
+                    <div class="row row-cols-1 row-cols-md-2 g-3 align-items-start">
+                        <div class="col">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><i class="fa-solid fa-bed text-success me-2"></i> เตียงเดี่ยว 6 ฟุต</li>
+                                <li class="list-group-item"><i class="fa-solid fa-tv text-success me-2"></i> Smart TV ขนาด 32 นิ้ว</li>
+                                <li class="list-group-item"><i class="fa-solid fa-snowflake text-success me-2"></i> เครื่องปรับอากาศ</li>
+                                <li class="list-group-item"><i class="fa-solid fa-bolt text-success me-2"></i> ตู้เย็น</li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><i class="fa-solid fa-hair-dryer text-success me-2"></i> ไดร์เป่าผม</li>
+                                <li class="list-group-item"><i class="fa-solid fa-shower text-success me-2"></i> เครื่องทำน้ำอุ่น</li>
+                                <li class="list-group-item"><i class="fa-solid fa-couch text-success me-2"></i> เก้าอี้ทำงาน</li>
+                                <li class="list-group-item"><i class="fa-solid fa-clock text-success me-2"></i> นาฬิกาขนาดใหญ่</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                </div>
+                
 
         <div class="row mb-5 room-section">
             <div class="col-md-6">
@@ -545,68 +563,28 @@
             </div>
         </div>
 
-        <div class="row mb-5 room-section">
-            <div class="col-md-6">
-                <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
-                    <img id="mainImage2" class="mainImage img-fluid w-100 transition-img fixed-size-img"
-                        src="Room01.jpg" alt="ห้องเตียงคู่">
-                </div>
-
-                <!-- ภาพย่อยที่เลื่อนซ้าย-ขวาได้ -->
-                <div class="thumbnail-wrapper">
-                    <button class="scroll-btn scroll-left"><i class="fa-solid fa-chevron-left"></i></button>
-                    <div class="thumbnail-container">
-                        <img src="House-01.jpg" class="img-thumbnail thumbnail-img" alt="เตียงคู่">
-                        <img src="Tv-01.jpg" class="img-thumbnail thumbnail-img" alt="ห้องน้ำ">
-                        <img src="Toilet-01.jpg" class="img-thumbnail thumbnail-img" alt="ห้องนั่งเล่น">
-                        <img src="Toilet-01.jpg" class="img-thumbnail thumbnail-img" alt="วิวห้อง">
-                        <img src="Toilet-01.jpg" class="img-thumbnail thumbnail-img" alt="ห้องอาหาร">
-                        <img src="Toilet-01.jpg" class="img-thumbnail thumbnail-img" alt="ห้องอาหาร">
-                        <img src="Toilet-01.jpg" class="img-thumbnail thumbnail-img" alt="ห้องอาหาร">
-                        <img src="Toilet-01.jpg" class="img-thumbnail thumbnail-img" alt="ห้องอาหาร">
-                    </div>
-                    <button class="scroll-btn scroll-right"><i class="fa-solid fa-chevron-right"></i></button>
-                </div>
-            </div>
-
-            <div class="col-md-6 d-flex flex-column align-items-center justify-content-center">
-                <div class="room-info text-center">
-                    <h4 class="fw-bold text-success text-center">ห้องเตียงคู่ สำหรับพัก 2 คน</h4>
-                    <p class="text-muted text-center">ห้องพักสะอาด สะดวกสบาย เหมาะสำหรับคู่รักหรือเพื่อนที่มาพักผ่อน</p>
-
-                    <h5 class="text-success mt-3 fw-bold text-center">สิ่งอำนวยความสะดวก</h5>
-                    <ul class="list-unstyled">
-                        <li class="d-flex align-items-center">
-                            <i class="fa-solid fa-bed text-success me-3 icon-fixed"></i>
-                            <span>เตียงเดี่ยว 1 เตียง</span>
-                        </li>
-                        <li class="d-flex align-items-center">
-                            <i class="fa-solid fa-tv text-success me-3 icon-fixed"></i>
-                            <span>โทรทัศน์จอแบน</span>
-                        </li>
-                        <li class="d-flex align-items-center">
-                            <i class="fa-solid fa-wifi text-success me-3 icon-fixed"></i>
-                            <span>Wi-Fi ฟรี</span>
-                        </li>
-                        <li class="d-flex align-items-center">
-                            <i class="fa-solid fa-mug-hot text-success me-3 icon-fixed"></i>
-                            <span>เครื่องชงกาแฟ</span>
-                        </li>
-                        <li class="d-flex align-items-center">
-                            <i class="fa-solid fa-snowflake text-success me-3 icon-fixed"></i>
-                            <span>เครื่องปรับอากาศ</span>
-                        </li>
-                        <li class="d-flex align-items-center">
-                            <i class="fa-solid fa-shower text-success me-3 icon-fixed"></i>
-                            <span>เครื่องทำน้ำอุ่น</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
     </div>
 
 
+    <style>
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer .social-icons a {
+            color: white;
+            font-size: 20px;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+
+        .footer .social-icons a:hover {
+            color: #1abc9c;
+        }
+    </style>
     <footer class="footer mt-5 bg-dark text-white py-4">
         <div class="container">
             <div class="row justify-content-center">
@@ -643,50 +621,50 @@
 
 
     <script>
-       document.querySelectorAll('.thumbnail-img').forEach(img => {
-    img.addEventListener('click', function () {
-        let roomContainer = this.closest('.room-section'); // หา section ของห้องที่รูปอยู่
-        let mainImage = roomContainer.querySelector('.mainImage'); // หา mainImage ของห้องนั้น ๆ
+        document.querySelectorAll('.thumbnail-img').forEach(img => {
+            img.addEventListener('click', function () {
+                let roomContainer = this.closest('.room-section'); // หา section ของห้องที่รูปอยู่
+                let mainImage = roomContainer.querySelector('.mainImage'); // หา mainImage ของห้องนั้น ๆ
 
-        if (mainImage) {
-            mainImage.style.opacity = "0"; // ทำให้ภาพจางลงก่อนเปลี่ยน
-            setTimeout(() => {
-                mainImage.src = this.src; // เปลี่ยนรูป
-                mainImage.style.opacity = "1"; // ทำให้ภาพกลับมาชัด
-            }, 300);
-        }
-    });
-});
+                if (mainImage) {
+                    mainImage.style.opacity = "0"; // ทำให้ภาพจางลงก่อนเปลี่ยน
+                    setTimeout(() => {
+                        mainImage.src = this.src; // เปลี่ยนรูป
+                        mainImage.style.opacity = "1"; // ทำให้ภาพกลับมาชัด
+                    }, 300);
+                }
+            });
+        });
 
-// ฟังก์ชันเลื่อนซ้าย-ขวา สำหรับ Desktop
-document.querySelectorAll('.scroll-btn').forEach(button => {
-    button.addEventListener('click', function () {
-        let roomContainer = this.closest('.room-section'); // หา section ของห้องที่ปุ่มอยู่
-        let scrollContainer = roomContainer.querySelector('.thumbnail-container'); // หา container ของภาพย่อย
+        // ฟังก์ชันเลื่อนซ้าย-ขวา สำหรับ Desktop
+        document.querySelectorAll('.scroll-btn').forEach(button => {
+            button.addEventListener('click', function () {
+                let roomContainer = this.closest('.room-section'); // หา section ของห้องที่ปุ่มอยู่
+                let scrollContainer = roomContainer.querySelector('.thumbnail-container'); // หา container ของภาพย่อย
 
-        let direction = this.classList.contains('scroll-left') ? -1 : 1; // เลือกทิศทาง
-        let scrollAmount = 100; // ค่าการเลื่อน
-        scrollContainer.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-    });
-});
+                let direction = this.classList.contains('scroll-left') ? -1 : 1; // เลือกทิศทาง
+                let scrollAmount = 100; // ค่าการเลื่อน
+                scrollContainer.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+            });
+        });
 
-// รองรับการ Swipe บนมือถือ
-document.querySelectorAll('.thumbnail-container').forEach(container => {
-    let startX = 0;
-    let scrollLeft = 0;
+        // รองรับการ Swipe บนมือถือ
+        document.querySelectorAll('.thumbnail-container').forEach(container => {
+            let startX = 0;
+            let scrollLeft = 0;
 
-    container.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].pageX - container.offsetLeft;
-        scrollLeft = container.scrollLeft;
-    });
+            container.addEventListener('touchstart', (e) => {
+                startX = e.touches[0].pageX - container.offsetLeft;
+                scrollLeft = container.scrollLeft;
+            });
 
-    container.addEventListener('touchmove', (e) => {
-        e.preventDefault();
-        let x = e.touches[0].pageX - container.offsetLeft;
-        let walk = (x - startX) * 2; // เพิ่มความเร็วในการเลื่อน
-        container.scrollLeft = scrollLeft - walk;
-    });
-});
+            container.addEventListener('touchmove', (e) => {
+                e.preventDefault();
+                let x = e.touches[0].pageX - container.offsetLeft;
+                let walk = (x - startX) * 2; // เพิ่มความเร็วในการเลื่อน
+                container.scrollLeft = scrollLeft - walk;
+            });
+        });
 
     </script>
 
