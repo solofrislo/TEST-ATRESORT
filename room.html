@@ -89,15 +89,6 @@
         }
 
 
-
-
-        .room-info {
-            padding: 20px;
-            text-align: center;
-        }
-
-
-
         /* เมนูติดต่อเรา */
         #menuContact {
             position: fixed;
@@ -113,11 +104,48 @@
             z-index: 999;
         }
 
+        
+
         /* เมื่อเมนูเปิด */
         #menuContact.active {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
+        }
+        
+        /* สไตล์ปุ่มไอคอน */
+        .icon-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+        }
+
+        .icon-btn i {
+            font-size: 24px;
+        }
+
+        /* สีของไอคอน */
+        .icon-btn:first-child i {
+            color: #1877F2;
+            /* Facebook */
+        }
+
+        .icon-btn:last-child i {
+            color: #06C755;
+            /* Line */
+        }
+
+        /* เอฟเฟกต์ Hover */
+        .icon-btn:hover {
+            background: #f0f0f0;
+            transform: scale(1.1);
         }
 
 
@@ -164,6 +192,7 @@
             opacity: 0.7;
             transition: opacity 0.3s ease-in-out;
         }
+        
 
         .thumbnail-img {
             width: 70px;
@@ -226,6 +255,7 @@
             right: -15px;
             /* ขยับปุ่มให้ชิดขวา */
         }
+        
     </style>
 </head>
 
@@ -314,8 +344,8 @@
                         <img src="House-01.jpg" class="img-thumbnail thumbnail-img" alt="เตียงคู่">
                         <img src="Tv-01.jpg" class="img-thumbnail thumbnail-img" alt="ห้องน้ำ">
                         <img src="Toilet-01.jpg" class="img-thumbnail thumbnail-img" alt="ห้องนั่งเล่น">
-                        <img src="Toilet-01.jpg" class="img-thumbnail thumbnail-img" alt="วิวห้อง">
-                        <img src="Toilet-01.jpg" class="img-thumbnail thumbnail-img" alt="ห้องอาหาร">
+                        <img src="toilet-02.jpg" class="img-thumbnail thumbnail-img" alt="ห้องนั่งเล่น">
+                        <img src="table-01.jpg" class="img-thumbnail thumbnail-img" alt="ห้องนั่งเล่น">
                     </div>
                     <button class="scroll-btn scroll-right d-none d-md-flex"><i
                             class="fa-solid fa-chevron-right"></i></button>
@@ -326,86 +356,76 @@
                     list-style: none;
                 }
             </style>
+         
             <!-- คอลัมน์ขวา: ข้อมูลห้องพัก -->
-            <div class="col-md-6 d-flex flex-column align-items-start justify-content-start order-3 order-md-2 mt-4">
-                <div class="room-info" style="text-align: left;">
-                    <h3 class="fw-bold text-success text-center">ห้องเตียงคู่ สำหรับพัก 2 คน</h3>
-                    <ul class="room-details">
-                        <li class="text-muted" style="font-size: 18px;">1. เตียงนอนสุดหรู 6 ฟุต +
-                            พร้อมชุดเซตที่นอนสีขาวสุดหรูหรา(เตียงเดี่ยว)</li>
-                        <li class="text-muted" style="font-size: 18px;">2. มีบริการเตียงเสริม 3.5 ฟุต สำหรับผู้ใหญ่ 1
-                            ท่าน หรือเด็กอายุ 9 ขวบขึ้นไป ในราคาเพียง 300 บาท <br>(เด็กเล็ก 0-8
-                            ขวบเข้าพักฟรีไม่เสริมเตียง)</li>
-                        <li class="text-muted" style="font-size: 18px;">3. Smart TV ขนาด 32 นิ้ว
-                            (รับชมได้ทุกประเทศทั่วโลก)</li>
-                        <li class="text-muted" style="font-size: 18px;">3. Smart TV ขนาด 32 นิ้ว
-                            (รับชมได้ทุกประเทศทั่วโลก)</li>
-                        <li class="text-muted" style="font-size: 18px;">4. เครื่องปรับอากาศ</li>
-                        <li class="text-muted" style="font-size: 18px;">5. ชุดโต๊ะทานอาหาร (โซนแผนกต้อนรับ)
-                            มีอาหารเช้าบริการ</li>
-                        <li class="text-muted" style="font-size: 18px;">6. ตู้เย็น</li>
-                        <li class="text-muted" style="font-size: 18px;">7. กาต้มน้ำร้อนไฟฟ้า ไฮโซ</li>
-                        <li class="text-muted" style="font-size: 18px;">8.ไดร์เป่าผม (เป่าชนิดแห้งเร็วพิเศษ)</li>
-                        <li class="text-muted" style="font-size: 18px;">9.เครื่องทำน้ำอุ่น</li>
-                        <li class="text-muted" style="font-size: 18px;">10. ผ้าขนหนูอาบน้ำ 2 ผืน และผ้าเช็ดหน้า 2 ผืน
-                            (สีขาวสะอาดตา)</li>
-                        <li class="text-muted" style="font-size: 18px;">11. โต๊ะเครื่องแป้ง พร้อมกระจกสุดล้ำ!!
-                            ไฮเทคปรับแสงไฟ 3 ระดับ</li>
-                        <li class="text-muted" style="font-size: 18px;">12.เก้าอี้หรูนุ่ม ๆ นั่งทำงานหรือนั่งแต่งตัวชิว
-                            ๆ</li>
-                        <li class="text-muted" style="font-size: 18px;">13. โซฟานั่งรับแขกน่ารัก ๆ</li>
-                        <li class="text-muted" style="font-size: 18px;">14. ชุดสบู่อาบน้ำ - แชมพู - ครีมนวดผม
-                            หมวกใส่ผมรองเท้าใส่ในห้องที่ปั่นหู</li>
-                        <li class="text-muted" style="font-size: 18px;">15. น้ำดื่ม 2 ขวด พร้อมกาแฟ</li>
-                        <li class="text-muted" style="font-size: 18px;">16. นาฬิกาใหญ่ยักษ์ทุกห้อง</li>
-                    </ul>
+            <div class="col-md-6 d-flex flex-column align-items-center justify-content-center order-3 order-md-2 ">
+                <div class="room-info text-start"> <!-- ใช้ text-start เพื่อให้ข้อความชิดซ้าย -->
+                    <h5 class="fw-bold text-success text-center">ภายในห้องประกอบด้วย</h5>
+                    <div class="room-details text-secondary" style="font-size: 18px; text-align: left;"> 
+                        <span>1. เตียงนอนสุดหรู 6 ฟุต + พร้อมชุดเซตที่นอนสีขาวสุดหรูหรา (เตียงเดี่ยว)</span><br>
+                        <span>2. มีบริการเตียงเสริม 3.5 ฟุต สำหรับผู้ใหญ่ 1 ท่าน หรือเด็กอายุ 9 ขวบขึ้นไป ในราคาเพียง 300 บาท (เด็กเล็ก 0-8 ขวบเข้าพักฟรีไม่เสริมเตียง)</span><br>
+                        <span>3. Smart TV ขนาด 32 นิ้ว (รับชมได้ทุกประเทศทั่วโลก)</span><br>
+                        <span>4. เครื่องปรับอากาศ</span><br>
+                        <span>5. ชุดโต๊ะทานอาหาร (โซนแผนกต้อนรับ) มีอาหารเช้าบริการ</span><br>
+                        <span>6. ตู้เย็น</span><br>
+                        <span>7. กาต้มน้ำร้อนไฟฟ้า ไฮโซ</span><br>
+                        <span>8. ไดร์เป่าผม (เป่าชนิดแห้งเร็วพิเศษ)</span><br>
+                        <span>9. เครื่องทำน้ำอุ่น</span><br>
+                        <span>10. ผ้าขนหนูอาบน้ำ 2 ผืน และผ้าเช็ดหน้า 2 ผืน (สีขาวสะอาดตา)</span><br>
+                        <span>11. โต๊ะเครื่องแป้ง พร้อมกระจกสุดล้ำ!! ไฮเทคปรับแสงไฟ 3 ระดับ</span><br>
+                        <span>12. เก้าอี้หรูนุ่ม ๆ นั่งทำงานหรือนั่งแต่งตัวชิว ๆ</span><br>
+                        <span>13. โซฟานั่งรับแขกน่ารัก ๆ</span><br>
+                        <span>14. ชุดสบู่อาบน้ำ - แชมพู - ครีมนวดผม หมวกใส่ผม รองเท้าใส่ในห้องที่ปั่นหู</span><br>
+                        <span>15. น้ำดื่ม 2 ขวด พร้อมกาแฟ</span><br>
+                        <span>16. นาฬิกาใหญ่ยักษ์ทุกห้อง</span>
+                    </div>
                 </div>
             </div>
+            
 
             <!-- สิ่งอำนวยความสะดวก -->
-            <div class="col-md-6 d-flex flex-column order-4 order-md-3 mb-5">
+            <div class="col-md-6 d-flex flex-column order-4 order-md-3 mt-3 mb-5">
                 <div class="room-facilities">
-                    <h3 class="text-success fw-bold text-center ">สิ่งอำนวยความสะดวก</h3>
+                    <h5 class="text-success fw-bold  text-center" >สิ่งอำนวยความสะดวก</h5>
                     <div class="container">
                         <div class="row row-cols-1 row-cols-md-2 g-3 justify-content-center text-center">
-                            <div class="col d-flex align-items-center justify-content-start px-5"
+                            <div class="col d-flex align-items-center "
                                 style="white-space: nowrap;">
-                                <span class="text-secondary" style="font-size: 18px;">เตียงเดี่ยว 6 ฟุต เตียงเสริม 3
-                                    ฟุต</span>
+                                <span class="text-secondary" style="font-size: 18px;">เตียงเดี่ยว 6 ฟุต เตียงเสริม 3 ฟุต</span>
                             </div>
-                            <div class="col d-flex align-items-center justify-content-start px-5"
+                            <div class="col d-flex align-items-center"
                                 style="white-space: nowrap;">
                                 <span class="text-secondary" style="font-size: 18px;">Smart TV ขนาด 32 นิ้ว</span>
                             </div>
-                            <div class="col d-flex align-items-center justify-content-start px-5"
+                            <div class="col d-flex align-items-center"
                                 style="white-space: nowrap;">
                                 <span class="text-secondary" style="font-size: 18px;">เครื่องปรับอากาศ</span>
                             </div>
-                            <div class="col d-flex align-items-center justify-content-start px-5"
+                            <div class="col d-flex align-items-center"
                                 style="white-space: nowrap;">
                                 <span class="text-secondary" style="font-size: 18px;">ตู้เย็น</span>
                             </div>
-                            <div class="col d-flex align-items-center justify-content-start px-5"
+                            <div class="col d-flex align-items-center"
                                 style="white-space: nowrap;">
                                 <span class="text-secondary" style="font-size: 18px;">กาต้มน้ำร้อน</span>
                             </div>
-                            <div class="col d-flex align-items-center justify-content-start px-5"
+                            <div class="col d-flex align-items-center"
                                 style="white-space: nowrap;">
                                 <span class="text-secondary" style="font-size: 18px;">ไดร์เป่าผม</span>
                             </div>
-                            <div class="col d-flex align-items-center justify-content-start px-5"
+                            <div class="col d-flex align-items-center"
                                 style="white-space: nowrap;">
                                 <span class="text-secondary" style="font-size: 18px;">เครื่องทำน้ำอุ่น</span>
                             </div>
-                            <div class="col d-flex align-items-center justify-content-start px-5"
+                            <div class="col d-flex align-items-center"
                                 style="white-space: nowrap; font-size: 18px;">
                                 <span class="text-secondary" style="font-size: 18px;">เก้าอี้ทำงาน</span>
                             </div>
-                            <div class="col d-flex align-items-center justify-content-start px-5"
+                            <div class="col d-flex align-items-center"
                                 style="white-space: nowrap;">
                                 <span class="text-secondary" style="font-size: 18px;">โซฟามินิมอล</span>
                             </div>
-                            <div class="col d-flex align-items-center justify-content-start px-5"
+                            <div class="col d-flex align-items-center"
                                 style="white-space: nowrap;">
                                 <span class="text-secondary" style="font-size: 18px;">นาฬิกาขนาดใหญ่</span>
                             </div>
@@ -417,7 +437,7 @@
             <div class="col-md-6 d-flex flex-column align-items-center justify-content-center order-5 order-md-4 ">
                 <div class="promo-price text-center bg-light p-4 rounded border border-2 border-secondary shadow-sm">
                     <h5 class="fw-bold text-dark text-uppercase fs-4">🔥 โปรโมชั่นพิเศษ! 🔥</h5>
-                    <p class="text-muted mb-1 fs-5">จากราคา <del class="text-secondary fw-bold fs-5">1,200
+                    <p class="text-secondary mb-1 fs-5">จากราคา <del class="text-secondary fw-bold fs-5">1,200
                             บาท</del></p>
                     <h2 class="fw-bold text-primary display-4">💰 650 บาท 💰</h2>
                     <p class="text-dark fw-bold fs-5">🎉 พร้อมอาหารเช้าฟรี! 🎉</p>
@@ -434,14 +454,14 @@
             </div>
 
         </div>
+        
         <!-- Romm-1 -->
-        <div
-        class="room-section row mb-5 mx-auto w-100 w-xl-85 w-lg-90 w-md-100 p-4 p-md-5 bg-white shadow-lg rounded-4">
+        <div class="room-section row mb-5 mx-auto w-100 w-xl-85 w-lg-90 w-md-100 p-4 p-md-5 bg-white shadow-lg rounded-4">
         <!-- คอลัมน์ซ้าย: รูปภาพหลัก + ภาพย่อย -->
         <div class="col-12 col-md-6 d-flex flex-column order-1">
             <!-- รูปภาพหลัก -->
             <div class="card shadow-sm border-0 rounded-4 overflow-hidden">
-                <img id="mainImage2" class="mainImage img-fluid w-100" src="Room01.jpg" alt="ห้องเตียงคู่"
+                <img id="mainImage2" class="mainImage img-fluid w-100" src="Room02.jpg" alt="ห้องเตียงคู่"
                     style="max-height: 500px; object-fit: cover;">
             </div>
 
@@ -453,8 +473,8 @@
                     <img src="House-01.jpg" class="img-thumbnail thumbnail-img" alt="เตียงคู่">
                     <img src="Tv-01.jpg" class="img-thumbnail thumbnail-img" alt="ห้องน้ำ">
                     <img src="Toilet-01.jpg" class="img-thumbnail thumbnail-img" alt="ห้องนั่งเล่น">
-                    <img src="Toilet-01.jpg" class="img-thumbnail thumbnail-img" alt="วิวห้อง">
-                    <img src="Toilet-01.jpg" class="img-thumbnail thumbnail-img" alt="ห้องอาหาร">
+                    <img src="toilet-02.jpg" class="img-thumbnail thumbnail-img" alt="ห้องนั่งเล่น">
+                    <img src="table-01.jpg" class="img-thumbnail thumbnail-img" alt="ห้องนั่งเล่น">
                 </div>
                 <button class="scroll-btn scroll-right d-none d-md-flex"><i
                         class="fa-solid fa-chevron-right"></i></button>
@@ -468,35 +488,35 @@
         <!-- คอลัมน์ขวา: ข้อมูลห้องพัก -->
         <div class="col-md-6 d-flex flex-column align-items-start justify-content-start order-3 order-md-2 mt-4">
             <div class="room-info" style="text-align: left;">
-                <h3 class="fw-bold text-success text-center">ห้องเตียงคู่ สำหรับพัก 2 คน</h3>
+                <h3 class="fw-bold text-success text-center">ภายในห้องประกอบด้วย</h3>
                 <ul class="room-details">
-                    <li class="text-muted" style="font-size: 18px;">1. เตียงนอนสุดหรู 6 ฟุต +
+                    <li class="text-secondary" style="font-size: 18px;">1. เตียงนอนสุดหรู 6 ฟุต +
                         พร้อมชุดเซตที่นอนสีขาวสุดหรูหรา(เตียงเดี่ยว)</li>
-                    <li class="text-muted" style="font-size: 18px;">2. มีบริการเตียงเสริม 3.5 ฟุต สำหรับผู้ใหญ่ 1
+                    <li class="text-secondary" style="font-size: 18px;">2. มีบริการเตียงเสริม 3.5 ฟุต สำหรับผู้ใหญ่ 1
                         ท่าน หรือเด็กอายุ 9 ขวบขึ้นไป ในราคาเพียง 300 บาท <br>(เด็กเล็ก 0-8
                         ขวบเข้าพักฟรีไม่เสริมเตียง)</li>
-                    <li class="text-muted" style="font-size: 18px;">3. Smart TV ขนาด 32 นิ้ว
+                    <li class="text-secondary" style="font-size: 18px;">3. Smart TV ขนาด 32 นิ้ว
                         (รับชมได้ทุกประเทศทั่วโลก)</li>
-                    <li class="text-muted" style="font-size: 18px;">3. Smart TV ขนาด 32 นิ้ว
+                    <li class="text-secondary" style="font-size: 18px;">3. Smart TV ขนาด 32 นิ้ว
                         (รับชมได้ทุกประเทศทั่วโลก)</li>
-                    <li class="text-muted" style="font-size: 18px;">4. เครื่องปรับอากาศ</li>
-                    <li class="text-muted" style="font-size: 18px;">5. ชุดโต๊ะทานอาหาร (โซนแผนกต้อนรับ)
+                    <li class="text-secondary" style="font-size: 18px;">4. เครื่องปรับอากาศ</li>
+                    <li class="text-secondary" style="font-size: 18px;">5. ชุดโต๊ะทานอาหาร (โซนแผนกต้อนรับ)
                         มีอาหารเช้าบริการ</li>
-                    <li class="text-muted" style="font-size: 18px;">6. ตู้เย็น</li>
-                    <li class="text-muted" style="font-size: 18px;">7. กาต้มน้ำร้อนไฟฟ้า ไฮโซ</li>
-                    <li class="text-muted" style="font-size: 18px;">8.ไดร์เป่าผม (เป่าชนิดแห้งเร็วพิเศษ)</li>
-                    <li class="text-muted" style="font-size: 18px;">9.เครื่องทำน้ำอุ่น</li>
-                    <li class="text-muted" style="font-size: 18px;">10. ผ้าขนหนูอาบน้ำ 2 ผืน และผ้าเช็ดหน้า 2 ผืน
+                    <li class="text-secondary" style="font-size: 18px;">6. ตู้เย็น</li>
+                    <li class="text-secondary" style="font-size: 18px;">7. กาต้มน้ำร้อนไฟฟ้า ไฮโซ</li>
+                    <li class="text-secondary" style="font-size: 18px;">8.ไดร์เป่าผม (เป่าชนิดแห้งเร็วพิเศษ)</li>
+                    <li class="text-secondary" style="font-size: 18px;">9.เครื่องทำน้ำอุ่น</li>
+                    <li class="text-secondary" style="font-size: 18px;">10. ผ้าขนหนูอาบน้ำ 2 ผืน และผ้าเช็ดหน้า 2 ผืน
                         (สีขาวสะอาดตา)</li>
-                    <li class="text-muted" style="font-size: 18px;">11. โต๊ะเครื่องแป้ง พร้อมกระจกสุดล้ำ!!
+                    <li class="text-secondary" style="font-size: 18px;">11. โต๊ะเครื่องแป้ง พร้อมกระจกสุดล้ำ!!
                         ไฮเทคปรับแสงไฟ 3 ระดับ</li>
-                    <li class="text-muted" style="font-size: 18px;">12.เก้าอี้หรูนุ่ม ๆ นั่งทำงานหรือนั่งแต่งตัวชิว
+                    <li class="text-secondary" style="font-size: 18px;">12.เก้าอี้หรูนุ่ม ๆ นั่งทำงานหรือนั่งแต่งตัวชิว
                         ๆ</li>
-                    <li class="text-muted" style="font-size: 18px;">13. โซฟานั่งรับแขกน่ารัก ๆ</li>
-                    <li class="text-muted" style="font-size: 18px;">14. ชุดสบู่อาบน้ำ - แชมพู - ครีมนวดผม
+                    <li class="text-secondary" style="font-size: 18px;">13. โซฟานั่งรับแขกน่ารัก ๆ</li>
+                    <li class="text-secondary" style="font-size: 18px;">14. ชุดสบู่อาบน้ำ - แชมพู - ครีมนวดผม
                         หมวกใส่ผมรองเท้าใส่ในห้องที่ปั่นหู</li>
-                    <li class="text-muted" style="font-size: 18px;">15. น้ำดื่ม 2 ขวด พร้อมกาแฟ</li>
-                    <li class="text-muted" style="font-size: 18px;">16. นาฬิกาใหญ่ยักษ์ทุกห้อง</li>
+                    <li class="text-secondary" style="font-size: 18px;">15. น้ำดื่ม 2 ขวด พร้อมกาแฟ</li>
+                    <li class="text-secondary" style="font-size: 18px;">16. นาฬิกาใหญ่ยักษ์ทุกห้อง</li>
                 </ul>
             </div>
         </div>
@@ -556,7 +576,7 @@
         <div class="col-md-6 d-flex flex-column align-items-center justify-content-center order-5 order-md-4 ">
             <div class="promo-price text-center bg-light p-4 rounded border border-2 border-secondary shadow-sm">
                 <h5 class="fw-bold text-dark text-uppercase fs-4">🔥 โปรโมชั่นพิเศษ! 🔥</h5>
-                <p class="text-muted mb-1 fs-5">จากราคา <del class="text-secondary fw-bold fs-5">1,200
+                <p class="text-secondary mb-1 fs-5">จากราคา <del class="text-secondary fw-bold fs-5">1,200
                         บาท</del></p>
                 <h2 class="fw-bold text-primary display-4">💰 650 บาท 💰</h2>
                 <p class="text-dark fw-bold fs-5">🎉 พร้อมอาหารเช้าฟรี! 🎉</p>
