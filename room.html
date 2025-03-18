@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AT Resort | รีสอร์ท</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&family=Sarabun:wght@300;400;600&family=Kanit:wght@300;400;600&display=swap');
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Prompt', 'Sarabun', 'Kanit', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+}
+
+
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    position: relative;
+    
+}
+
+.nav-container::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, #1D2951  , #fefffe);
+}
+
+
+.nav-logo h1 {
+    font-size: 28px;
+    color: #388E3C ;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+    
+}
+
+.nav-menu a {
+    text-decoration: none;
+    font-size: 16px;
+    /* color: #1d8e77; */
+    color: #1D2951   ;
+    font-weight: 500;
+    transition: 0.3s ease;
+    padding: 10px 15px;
+    
+    
+}
+
+/* Navbar Menu Hover Effect */
+.nav-menu ul li a {
+    position: relative;
+    padding: 10px 25px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+    
+}
+
+/* เอฟเฟกต์ Hover บนเมนู (เฉพาะจอใหญ่) */
+@media (min-width: 992px) {
+    .nav-menu ul li a:hover {
+        background-color: #1D2951;
+        color: white !important;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+        transform: translateY(-2px);
+    }
+}
+
+
+
+.btn-resort {
+    background: #030303;
+    color: white;
+    border-radius: 25px;
+    padding: 10px 20px;
+    transition: 0.3s ease-in-out;
+}
+
+.btn-resort:hover {
+    background: #000000;
+    color: #ffffff;
+    transform: scale(1.1);
+}
+
+        .footer {
+            background-color: #1D2951;
+            color: white;
+            padding: 40px 0;
+            text-align: center; 
+        }
+
+        .footer .social-icons a {
+            color: white;
+            font-size: 20px;
+            margin: 0 10px;
+            transition: 0.3s;
+        }
+
+        .footer .social-icons a:hover {
+            color: #1abc9c;
+        }
+
+
+        /* Section */
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+
+        /* เมนูติดต่อเรา */
+        #menuContact {
+            position: fixed;
+            bottom: 270px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 999;
+        }
+
+
+
+        /* เมื่อเมนูเปิด */
+        #menuContact.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* สไตล์ปุ่มไอคอน */
+        .icon-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s ease, transform 0.2s ease;
+            text-decoration: none;
+        }
+
+        .icon-btn i {
+            font-size: 24px;
+        }
+
+        /* สีของไอคอน */
+        .icon-btn:first-child i {
+            color: #1877F2;
+            /* Facebook */
+        }
+
+        .icon-btn:last-child i {
+            color: #06C755;
+            /* Line */
+        }
+
+        /* เอฟเฟกต์ Hover */
+        .icon-btn:hover {
+            background: #f0f0f0;
+            transform: scale(1.1);
+        }
+
+
+        /* ปรับขนาดของภาพหลักให้เท่ากัน */
+        .fixed-size-img {
+            height: 400px;
+            object-fit: cover;
+        }
+
+        /* ปรับขนาดของ Thumbnail ให้เท่ากัน */
+        .fixed-size-thumb {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+
+        /* เอฟเฟกต์เปลี่ยนภาพหลัก */
+        .transition-img {
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .thumbnail-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 350px;
+            /* ควบคุมความกว้างของแถบรูปภาพ */
+            margin: auto;
+        }
+
+        .thumbnail-container {
+            display: flex;
+            overflow: hidden;
+            /* ซ่อนภาพที่เกินมา */
+            gap: 10px;
+            width: 100%;
+            max-width: 320px;
+            padding: 10px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            touch-action: pan-x;
+            opacity: 0.7;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+
+        .thumbnail-img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            /* ทำให้ทุกภาพมีขนาดเท่ากัน */
+            cursor: pointer;
+            border-radius: 5px;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .thumbnail-container:hover {
+            opacity: 1;
+            /* ทำให้ชัดขึ้นเมื่อโฮเวอร์ */
+        }
+
+        .thumbnail-img:hover {
+            transform: scale(1.1);
+        }
+
+        .scroll-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            .thumbnail-container {
+                overflow-x: scroll;
+                /* เปิดให้เลื่อนแบบปัดเอง */
+                -ms-overflow-style: none;
+                /* ซ่อน Scrollbar บน IE */
+                scrollbar-width: none;
+                /* ซ่อน Scrollbar บน Firefox */
+            }
+
+            .thumbnail-container::-webkit-scrollbar {
+                display: none;
+                /* ซ่อน Scrollbar บน Chrome & Safari */
+            }
+        }
+
+        .scroll-left {
+            left: -40px;
+            /* ขยับปุ่มให้ชิดซ้าย */
+        }
+
+        .scroll-right {
+            right: -15px;
+            /* ขยับปุ่มให้ชิดขวา */
+        }
+        
+        .txt18 {
+            font-size: 18px;
+        }
+
+        .txt20 {
+            font-size: 20px;
+        }
+
+        .bg01 {
+            color: #1D2951;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- ปุ่ม Scroll to Top -->
+    <button type="button" id="btnScrollTop" class="btn rounded-circle shadow-none" onclick="topFunction()"
+        style="display: none; position: fixed; bottom: 130px; right: 20px; background: #334270; color: white; width: 50px; height: 50px; border: none; border-radius: 50%; z-index: 1000;">
+        <i class="fa fa-chevron-up"></i>
+    </button>
+
+    <!-- ปุ่มติดต่อเรา -->
+    <button type="button" id="btnContact" class="btn rounded-circle shadow-none"
+        style="position: fixed; bottom: 200px; right: 20px; background: #3498db; color: white; width: 50px; height: 50px; border: none; border-radius: 50%; z-index: 1000;">
+        <i class="fa-solid fa-message"></i>
+    </button>
+
+    <!-- เมนูติดต่อเรา (Facebook และ Line) -->
+    <div id="menuContact" class="contact-menu">
+        <a href="https://www.facebook.com/ATresort1" target="_blank" class="icon-btn">
+            <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://line.me" target="_blank" class="icon-btn">
+            <i class="fa-brands fa-line"></i>
+        </a>
+    </div>
+
+    <header>
+        <div class="nav-container d-flex align-items-center justify-content-between px-3 py-2">
+            <!-- โลโก้ -->
+            <a href="index.html" class="text-decoration-none">
+                <div class="nav-logo d-flex flex-column flex-md-row align-items-start align-items-md-center text-start">
+                    <!-- โลโก้ + ชื่อ -->
+                    <div class="d-flex align-items-center">
+                        <img src="Logo-02.png" alt="AT Resort Logo" class="logo-img me-2"
+                            style="height: 60px; width: 60px; object-fit: contain;">
+                        <span class="m-0" style="font-size: 22px; font-weight: bold; color:#1D2951;">AT Resort รีสอร์ท</span>
+                    </div>
+            
+                    <!-- เส้นกั้น (แสดงเฉพาะจอใหญ่) -->
+                    <span class="d-none d-md-inline-block" 
+                          style="height: 30px; width: 1px; background-color: #1D2951; margin: 0px 15px; display: inline-block;"></span>
+            
+                    <!-- เบอร์โทร (อยู่ข้างล่างใน Mobile) -->
+                    <span class="d-none d-md-inline-block fw-bold" style="color: #1D2951;">
+                        <i class="fa-solid fa-phone text-decoration-none fw-bold" style="color: #1D2951;"></i> โทร. 085-7664996
+                    </span>
+                </div>
+            </a>
+            
+
+            <!-- เมนูหลัก (แสดงเฉพาะจอใหญ่) -->
+            <nav class="nav-menu d-none d-lg-flex">
+                <ul class="d-flex list-unstyled m-0 gap-4">
+                    <li><a href="index.html" class="text-decoration-none  fw-semibold">หน้าเเรก</a></li>
+                    <li><a href="room.html" class="text-decoration-none  fw-semibold">ห้องพัก</a></li>
+                    <li><a href="view.html" class="text-decoration-none  fw-semibold">รูปภาพ</a></li>
+                    <li><a href="contact.html" class="text-decoration-none  fw-semibold">ติดต่อเรา</a></li>
+                    <li><a href="about.html" class="text-decoration-none  fw-semibold">เกี่ยวกับเรา</a></li>
+                </ul>
+            </nav>
+            
+
+            <!-- Burger Menu Button (แสดงเฉพาะจอเล็ก) -->
+            <button class="navbar-toggler d-lg-none border-0 bg-transparent shadow-sm rounded-circle p-2" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fa-solid fa-bars fs-3"></i>
+            </button>
+        </div>
+
+        <!-- เมนูสำหรับจอเล็ก (ใช้ collapse) -->
+        <div class="collapse navbar-collapse d-lg-none bg-light p-3 shadow-sm rounded" id="navbarNav">
+            <ul class="navbar-nav d-flex flex-column align-items-center text-center">
+                <li class="py-2 w-100"><a href="index.html"
+                        class="text-decoration-none bg01 fw-semibold d-block py-2">หน้าเเรก</a></li>
+                <li class="py-2 w-100"><a href="room.html"
+                        class="text-decoration-none bg01 fw-semibold d-block py-2">ห้องพัก</a></li>
+                <li class="py-2 w-100"><a href="view.html"
+                        class="text-decoration-none bg01 fw-semibold d-block py-2">บรรยากาศรีสอร์ท</a></li>
+                <li class="py-2 w-100"><a href="contact.html"
+                        class="text-decoration-none bg01 fw-semibold d-block py-2">ติดต่อเรา</a></li>
+                <li class="py-2 w-100"><a href="about.html"
+                        class="text-decoration-none bg01 fw-semibold d-block py-2">เกี่ยวกับเรา</a></li>
+            </ul>
+        </div>
+    </header> 
+
+
+    <div class="container-fluid mt-5">
+        <!-- Romm-1 -->
+        <div
+            class="room-section row mb-5 mx-auto w-100 w-xl-85 w-lg-90 w-md-100 p-4 p-md-5 bg-white shadow-lg rounded-4">
+            <!-- คอลัมน์ซ้าย: รูปภาพหลัก + ภาพย่อย -->
+            <div class="col-12 col-md-6 d-flex flex-column order-1">
+                <!-- รูปภาพหลัก -->
+                <div class="card shadow-sm border-0 rounded-4 overflow-hidden">
+                    <img id="mainImage2" class="mainImage img-fluid w-100" src="Room01.jpg" alt="ห้องเตียงคู่"
+                        style="max-height: 500px; object-fit: cover;">
+                </div>
+
+                <!-- ภาพย่อย -->
+                <div class="thumbnail-wrapper text-center">
+                    <button class="scroll-btn scroll-left d-none d-md-flex"><i
+                            class="fa-solid fa-chevron-left"></i></button>
+                    <div class="thumbnail-container d-flex justify-content-center">
+                        <img src="House-01.jpg" class="img-thumbnail thumbnail-img" alt="เตียงคู่">
+                        <img src="Tv-01.jpg" class="img-thumbnail thumbnail-img" alt="ห้องน้ำ">
+                        <img src="Toilet-01.jpg" class="img-thumbnail thumbnail-img" alt="ห้องนั่งเล่น">
+                        <img src="toilet-02.jpg" class="img-thumbnail thumbnail-img" alt="ห้องนั่งเล่น">
+                        <img src="table-01.jpg" class="img-thumbnail thumbnail-img" alt="ห้องนั่งเล่น">
+                    </div>
+                    <button class="scroll-btn scroll-right d-none d-md-flex"><i
+                            class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <!-- คอลัมน์ขวา: ข้อมูลห้องพัก -->
+            <div class="col-md-6 d-flex flex-column align-items-center justify-content-center order-3 order-md-2 mt-3 ">
+                <div class="room-info text-start"> <!-- ใช้ text-start เพื่อให้ข้อความชิดซ้าย -->
+                    <h5 class="fw-bold text-center" style="color: #2c3e50;">ภายในห้องประกอบด้วย</h5>
+                    <div class="room-details text-secondary" style="font-size: 18px; text-align: left;">
+                        <span class="bg01">1. เตียงนอนสุดหรู 6 ฟุต + พร้อมชุดเซตที่นอนสีขาวสุดหรูหรา (เตียงเดี่ยว)</span><br>
+                        <span class="bg01">2. มีบริการเตียงเสริม 3.5 ฟุต สำหรับผู้ใหญ่ 1 ท่าน หรือเด็กอายุ 9 ขวบขึ้นไป ในราคาเพียง
+                            300 บาท (เด็กเล็ก 0-8 ขวบเข้าพักฟรีไม่เสริมเตียง)</span><br>
+                        <span class="bg01">3. Smart TV ขนาด 32 นิ้ว (รับชมได้ทุกประเทศทั่วโลก)</span><br>
+                        <span class="bg01">4. เครื่องปรับอากาศ</span><br>
+                        <span class="bg01">5. ชุดโต๊ะทานอาหาร (โซนแผนกต้อนรับ) มีอาหารเช้าบริการ</span><br>
+                        <span class="bg01">6. ตู้เย็น</span><br>
+                        <span class="bg01"> 7. กาต้มน้ำร้อนไฟฟ้า ไฮโซ</span><br>
+                        <span class="bg01">8. ไดร์เป่าผม (เป่าชนิดแห้งเร็วพิเศษ)</span><br>
+                        <span class="bg01">9. เครื่องทำน้ำอุ่น</span><br>
+                        <span class="bg01">10. ผ้าขนหนูอาบน้ำ 2 ผืน และผ้าเช็ดหน้า 2 ผืน (สีขาวสะอาดตา)</span><br>
+                        <span class="bg01">11. โต๊ะเครื่องแป้ง พร้อมกระจกสุดล้ำ!! ไฮเทคปรับแสงไฟ 3 ระดับ</span><br>
+                        <span class="bg01">12. เก้าอี้หรูนุ่ม ๆ นั่งทำงานหรือนั่งแต่งตัวชิว ๆ</span><br>
+                        <span class="bg01">13. โซฟานั่งรับแขกน่ารัก ๆ</span><br>
+                        <span class="bg01">14. ชุดสบู่อาบน้ำ - แชมพู - ครีมนวดผม หมวกใส่ผม รองเท้าใส่ในห้องที่ปั่นหู</span><br>
+                        <span class="bg01">15. น้ำดื่ม 2 ขวด พร้อมกาแฟ</span><br>
+                        <span class="bg01">16. นาฬิกาใหญ่ยักษ์ทุกห้อง</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- สิ่งอำนวยความสะดวก -->
+            <div class="col-md-6 d-flex flex-column order-4 order-md-3 mt-3 mb-5">
+                <div class="room-facilities">
+                    <h5 class=" fw-bold  text-center" style="color: #2c4f72;">สิ่งอำนวยความสะดวก</h5>
+                    <div class="container">
+                        <div class="row row-cols-1 row-cols-md-2 g-3 justify-content-center text-center">
+                            <div class="col d-flex align-items-center">
+                                <i class="fa-solid fa-bed me-2 " style="color: #2c4f72;"></i>
+                                <span class="" style="font-size: 18px; color: #2c4f72; ">เตียงเดี่ยว 6 ฟุต เตียงเสริม 3 ฟุต</span>
+                            </div>
+                            <div class="col d-flex align-items-center">
+                                <i class="fa-solid fa-tv me-2 " style="color: #2c4f72;"></i>
+                                <span class="" style="font-size: 18px; color: #2c4f72;">Smart TV ขนาด 32 นิ้ว</span>
+                            </div>
+                            <div class="col d-flex align-items-center">
+                                <i class="fa-solid fa-snowflake me-2 " style="color: #2c4f72;"></i>
+                                <span class="" style="font-size: 18px; color: #2c4f72;">เครื่องปรับอากาศ</span>
+                            </div>
+                            <div class="col d-flex align-items-center">
+                                <i class="fa-solid fa-temperature-low me-2 " style="color: #2c4f72;" ></i>
+                                <span class="" style="font-size: 18px; color: #2c4f72;">ตู้เย็น</span>
+                            </div>
+                            <div class="col d-flex align-items-center">
+                                <i class="fa-solid fa-mug-hot me-2 " style="color: #2c4f72;"></i>
+                                <span class="" style="font-size: 18px; color: #2c4f72;">กาต้มน้ำร้อน</span>
+                            </div>
+                            <div class="col d-flex align-items-center">
+                                <i class="fa-solid fa-wind me-2 " style="color: #2c4f72;"></i>
+                                <span class="" style="font-size: 18px; color: #2c4f72;">ไดร์เป่าผม</span>
+                            </div>
+                            <div class="col d-flex align-items-center">
+                                <i class="fa-solid fa-shower me-2 " style="color: #2c4f72;"></i>
+                                <span class="" style="font-size: 18px; color: #2c4f72;">เครื่องทำน้ำอุ่น</span>
+                            </div>
+                            <div class="col d-flex align-items-center">
+                                <i class="fa-solid fa-chair me-2 " style="color: #2c4f72;"></i>
+                                <span class="" style="font-size: 18px; color: #2c4f72;">เก้าอี้ทำงาน</span>
+                            </div>
+                            <div class="col d-flex align-items-center">
+                                <i class="fa-solid fa-couch me-2 " style="color: #2c4f72;"></i>
+                                <span class="" style="font-size: 18px; color: #2c4f72;">โซฟามินิมอล</span>
+                            </div>
+                            <div class="col d-flex align-items-center">
+                                <i class="fa-solid fa-clock me-2 " style="color: #2c4f72;"></i>
+                                <span class="" style="font-size: 18px; color: #2c4f72;">นาฬิกาขนาดใหญ่</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center order-5 order-md-4">
+                <div class="promo-price text-center bg-light p-4 p-md-5 rounded border border-1  shadow-sm w-100">
+                    <h5 class="fw-bold text-danger text-uppercase fs-4">🔥 โปรโมชั่นพิเศษ! 🔥</h5>
+                    <p class="text-danger fw-bold mb-1 fs-5">จากราคา <del class="text-danger fw-bold fs-5">1,200 บาท</del></p>
+                    <h4 class="fw-bold bg01 display-4"> 650 บาท </h4>
+                    <p class="bg01 fw-bold fs-5"> พร้อมอาหารเช้าฟรี! </p>
+                </div>
+            
+                <!-- ข้อความเชิญชวน -->
+                <div class="col-12 text-center mt-4 px-3">
+                    <p class="fs-5 bg01 fw-bold">เชิญเข้าชมห้องพักก่อนเข้าพักได้</p>
+                </div>
+            </div>
+        </div>
+
+        <div  class="room-section row mb-5 mx-auto w-100 w-xl-85 w-lg-90 w-md-100 p-4 p-md-5 bg-white shadow-lg rounded-4">
+            <!-- คอลัมน์ซ้าย: รูปภาพหลัก + ภาพย่อย -->
+            <div class="col-12 col-md-6 d-flex flex-column order-1">
+                <!-- รูปภาพหลัก -->
+                <div class="card shadow-sm border-0 rounded-4 overflow-hidden">
+                    <img id="mainImage2" class="mainImage img-fluid w-100" src="Room02.jpg" alt="ห้องเตียงคู่"
+                        style="max-height: 500px; object-fit: cover;">
+                </div>
+
+                <!-- ภาพย่อย -->
+                <div class="thumbnail-wrapper text-center">
+                    <!-- <button class="scroll-btn scroll-left d-none d-md-flex"><i class="fa-solid fa-chevron-left"></i></button> -->
+                    <div class="thumbnail-container d-flex justify-content-center">
+                        <img src="House-01.jpg" class="img-thumbnail thumbnail-img" alt="เตียงคู่">
+                        <img src="Tv-01.jpg" class="img-thumbnail thumbnail-img" alt="ห้องน้ำ">
+                        <img src="Toilet-01.jpg" class="img-thumbnail thumbnail-img" alt="ห้องนั่งเล่น">
+                        <img src="toilet-02.jpg" class="img-thumbnail thumbnail-img" alt="ห้องนั่งเล่น">
+                        <img src="table-01.jpg" class="img-thumbnail thumbnail-img" alt="ห้องนั่งเล่น">
+                    </div>
+                    <!-- <button class="scroll-btn scroll-right d-none d-md-flex"><i class="fa-solid fa-chevron-right"></i></button> -->
+                </div>
+            </div>
+            <style>
+                .room-details {
+                    list-style: none;
+                }
+            </style>
+
+            <!-- คอลัมน์ขวา: ข้อมูลห้องพัก -->
+            <div class="col-md-6 d-flex flex-column align-items-center justify-content-center order-3 order-md-2 mt-3 ">
+                <div class="room-info text-start"> <!-- ใช้ text-start เพื่อให้ข้อความชิดซ้าย -->
+                    <h5 class="fw-bold bg01 text-center">ภายในห้องประกอบด้วย</h5>
+                    <div class="room-details text-secondary" style="font-size: 18px; text-align: left;">
+                        <span class="bg01 ">1. เตียงนอนสุดหรู 6 ฟุต + พร้อมชุดเซตที่นอนสีขาวสุดหรูหรา (เตียงเดี่ยว)</span><br>
+                        <span class="bg01">2. มีบริการเตียงเสริม 3.5 ฟุต สำหรับผู้ใหญ่ 1 ท่าน หรือเด็กอายุ 9 ขวบขึ้นไป ในราคาเพียง
+                            300 บาท (เด็กเล็ก 0-8 ขวบเข้าพักฟรีไม่เสริมเตียง)</span><br>
+                        <span class="bg01">3. Smart TV ขนาด 32 นิ้ว (รับชมได้ทุกประเทศทั่วโลก)</span><br>
+                        <span class="bg01">4. เครื่องปรับอากาศ</span><br>
+                        <span class="bg01">5. ชุดโต๊ะทานอาหาร (โซนแผนกต้อนรับ) มีอาหารเช้าบริการ</span><br>
+                        <span class="bg01">6. ตู้เย็น</span><br>
+                        <span class="bg01"> 7. กาต้มน้ำร้อนไฟฟ้า ไฮโซ</span><br>
+                        <span class="bg01">8. ไดร์เป่าผม (เป่าชนิดแห้งเร็วพิเศษ)</span><br>
+                        <span class="bg01 ">9. เครื่องทำน้ำอุ่น</span><br>
+                        <span class="bg01">10. ผ้าขนหนูอาบน้ำ 2 ผืน และผ้าเช็ดหน้า 2 ผืน (สีขาวสะอาดตา)</span><br>
+                        <span class="bg01">11. โต๊ะเครื่องแป้ง พร้อมกระจกสุดล้ำ!! ไฮเทคปรับแสงไฟ 3 ระดับ</span><br>
+                        <span class="bg01">12. เก้าอี้หรูนุ่ม ๆ นั่งทำงานหรือนั่งแต่งตัวชิว ๆ</span><br>
+                        <span class="bg01">13. โซฟานั่งรับแขกน่ารัก ๆ</span><br>
+                        <span class="bg01">14. ชุดสบู่อาบน้ำ - แชมพู - ครีมนวดผม หมวกใส่ผม รองเท้าใส่ในห้องที่ปั่นหู</span><br>
+                        <span class="bg01">15. น้ำดื่ม 2 ขวด พร้อมกาแฟ</span><br>
+                        <span class="bg01">16. นาฬิกาใหญ่ยักษ์ทุกห้อง</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- สิ่งอำนวยความสะดวก -->
+            <div class="col-md-6 d-flex flex-column order-4 order-md-3 mt-3 mb-5">
+                <div class="room-facilities">
+                    <h5 class="bg01 fw-bold  text-center">สิ่งอำนวยความสะดวก</h5>
+                    <div class="container">
+                        <div class="row row-cols-1 row-cols-md-2 g-3 justify-content-center text-center">
+                            <div class="col d-flex align-items-center">
+                                <i class="fa-solid fa-bed me-2 " style="color: #2c4f72;"></i>
+                                <span class="" style="font-size: 18px; color: #2c4f72; ">เตียงเดี่ยว 6 ฟุต เตียงเสริม 3 ฟุต</span>
+                            </div>
+                            <div class="col d-flex align-items-center">
+                                <i class="fa-solid fa-tv me-2 " style="color: #2c4f72;"></i>
+                                <span class="" style="font-size: 18px; color: #2c4f72;">Smart TV ขนาด 32 นิ้ว</span>
+                            </div>
+                            <div class="col d-flex align-items-center">
+                                <i class="fa-solid fa-snowflake me-2 " style="color: #2c4f72;"></i>
+                                <span class="" style="font-size: 18px; color: #2c4f72;">เครื่องปรับอากาศ</span>
+                            </div>
+                            <div class="col d-flex align-items-center">
+                                <i class="fa-solid fa-temperature-low me-2 " style="color: #2c4f72;" ></i>
+                                <span class="" style="font-size: 18px; color: #2c4f72;">ตู้เย็น</span>
+                            </div>
+                            <div class="col d-flex align-items-center">
+                                <i class="fa-solid fa-mug-hot me-2 " style="color: #2c4f72;"></i>
+                                <span class="" style="font-size: 18px; color: #2c4f72;">กาต้มน้ำร้อน</span>
+                            </div>
+                            <div class="col d-flex align-items-center">
+                                <i class="fa-solid fa-wind me-2 " style="color: #2c4f72;"></i>
+                                <span class="" style="font-size: 18px; color: #2c4f72;">ไดร์เป่าผม</span>
+                            </div>
+                            <div class="col d-flex align-items-center">
+                                <i class="fa-solid fa-shower me-2 " style="color: #2c4f72;"></i>
+                                <span class="" style="font-size: 18px; color: #2c4f72;">เครื่องทำน้ำอุ่น</span>
+                            </div>
+                            <div class="col d-flex align-items-center">
+                                <i class="fa-solid fa-chair me-2 " style="color: #2c4f72;"></i>
+                                <span class="" style="font-size: 18px; color: #2c4f72;">เก้าอี้ทำงาน</span>
+                            </div>
+                            <div class="col d-flex align-items-center">
+                                <i class="fa-solid fa-couch me-2 " style="color: #2c4f72;"></i>
+                                <span class="" style="font-size: 18px; color: #2c4f72;">โซฟามินิมอล</span>
+                            </div>
+                            <div class="col d-flex align-items-center">
+                                <i class="fa-solid fa-clock me-2 " style="color: #2c4f72;"></i>
+                                <span class="" style="font-size: 18px; color: #2c4f72;">นาฬิกาขนาดใหญ่</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center order-5 order-md-4">
+                <div class="promo-price text-center p-4 p-md-5 rounded border border- shadow-sm ">
+                    <h5 class="fw-bold text-danger text-uppercase fs-4">🔥 โปรโมชั่นพิเศษ! 🔥</h5>
+                    <p class="text-danger  fw-bold fs-5">จากราคา <del class="text-danger fw-bold fs-5">1,200 บาท</del></p>
+                    <h4 class="fw-bold bg01 display-4"> 650 บาท </h4>
+                    <p class="bg01 fw-bold fs-5"> พร้อมอาหารเช้าฟรี! </p>
+                </div>
+            
+                <!-- ข้อความเชิญชวน -->
+                <div class="col-12 text-center mt-4 px-3">
+                    <p class="fs-5 bg01 fw-bold">เชิญเข้าชมห้องพักก่อนเข้าพักได้</p>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+        <footer class="footer mt-5  text-white py-4">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-md-10">
+                        <div class="row align-items-center text-center">
+                            <!-- คอลัมน์ 1: ช่องทางติดต่อ -->
+                            <div class="col-md-6 mb-3 d-flex flex-column align-items-center">
+                                <h5>ช่องทางติดต่อ</h5>
+                                <p class="mb-0">โทร: 085-7664996</p>
+                            </div>
+        
+                            <!-- คอลัมน์ 2: ติดต่อผ่าน Facebook และ Line -->
+                            <div class="col-md-6 mb-3 d-flex flex-column align-items-center">
+                                <h5>ติดต่อเรา</h5>
+                                <div class="d-flex">
+                                    <a href="#" class="text-decoration-none text-white me-4"><i class="fa-brands fa-facebook"></i> AT Resort</a>
+                                    <a href="#" class="text-decoration-none text-white"><i class="fa-brands fa-line"></i> AT Resort</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    
+         <!-- Copyright -->
+         <div class="text-center py-2" style="background: #1D2951;">
+            <p class="mb-0 text-light">&copy; 2024 AT Resort. All Rights Reserved.</p>
+        </div>
+    
+
+        
+                
+
+
+
+
+            <script>
+                document.querySelectorAll('.thumbnail-img').forEach(img => {
+                    img.addEventListener('click', function () {
+                        let roomContainer = this.closest('.room-section'); // หา section ของห้องที่รูปอยู่
+                        let mainImage = roomContainer.querySelector('.mainImage'); // หา mainImage ของห้องนั้น ๆ
+
+                        if (mainImage) {
+                            mainImage.style.opacity = "0"; // ทำให้ภาพจางลงก่อนเปลี่ยน
+                            setTimeout(() => {
+                                mainImage.src = this.src; // เปลี่ยนรูป
+                                mainImage.style.opacity = "1"; // ทำให้ภาพกลับมาชัด
+                            }, 300);
+                        }
+                    });
+                });
+
+                // ฟังก์ชันเลื่อนซ้าย-ขวา สำหรับ Desktop
+                document.querySelectorAll('.scroll-btn').forEach(button => {
+                    button.addEventListener('click', function () {
+                        let roomContainer = this.closest('.room-section'); // หา section ของห้องที่ปุ่มอยู่
+                        let scrollContainer = roomContainer.querySelector('.thumbnail-container'); // หา container ของภาพย่อย
+
+                        let direction = this.classList.contains('scroll-left') ? -1 : 1; // เลือกทิศทาง
+                        let scrollAmount = 100; // ค่าการเลื่อน
+                        scrollContainer.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+                    });
+                });
+
+                // รองรับการ Swipe บนมือถือ
+                document.querySelectorAll('.thumbnail-container').forEach(container => {
+                    let startX = 0;
+                    let scrollLeft = 0;
+
+                    container.addEventListener('touchstart', (e) => {
+                        startX = e.touches[0].pageX - container.offsetLeft;
+                        scrollLeft = container.scrollLeft;
+                    });
+
+                    container.addEventListener('touchmove', (e) => {
+                        e.preventDefault();
+                        let x = e.touches[0].pageX - container.offsetLeft;
+                        let walk = (x - startX) * 2; // เพิ่มความเร็วในการเลื่อน
+                        container.scrollLeft = scrollLeft - walk;
+                    });
+                });
+
+            </script>
+
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    var btnScrollTop = document.getElementById("btnScrollTop");
+                    var btnContact = document.getElementById("btnContact");
+                    var menuContact = document.getElementById("menuContact");
+                    var contactIcon = btnContact.querySelector("i");
+
+                    // เมื่อเลื่อนลงมา ให้แสดงปุ่ม Scroll to Top
+                    window.onscroll = function () {
+                        if (document.documentElement.scrollTop > 20 || document.body.scrollTop > 20) {
+                            btnScrollTop.style.display = "block";
+                        } else {
+                            btnScrollTop.style.display = "none";
+                        }
+                    };
+
+                    // ฟังก์ชันเลื่อนกลับด้านบน
+                    window.topFunction = function () {
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                    };
+
+                    // คลิกปุ่มติดต่อ: เปิด/ปิดเมนูด้วยเอฟเฟกต์ slide
+                    btnContact.addEventListener("click", function (event) {
+                        event.stopPropagation();
+                        if (menuContact.classList.contains("active")) {
+                            menuContact.classList.remove("active");
+                            // เปลี่ยนไอคอนกลับเป็น fa-message
+                            contactIcon.classList.remove("fa-xmark");
+                            contactIcon.classList.add("fa-message");
+                        } else {
+                            menuContact.classList.add("active");
+                            // เปลี่ยนไอคอนเป็นกากบาท
+                            contactIcon.classList.remove("fa-message");
+                            contactIcon.classList.add("fa-xmark");
+                        }
+                    });
+
+                    // คลิกที่อื่น: ปิดเมนูติดต่อ (ถ้าเปิดอยู่)
+                    document.addEventListener("click", function (event) {
+                        if (!event.target.closest("#btnContact") && !event.target.closest("#menuContact")) {
+                            menuContact.classList.remove("active");
+                            contactIcon.classList.remove("fa-xmark");
+                            contactIcon.classList.add("fa-message");
+                        }
+                    });
+                });
+            </script>
+
+</body>
+
+</html>
